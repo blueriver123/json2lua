@@ -71,7 +71,7 @@ function fromObject(obj, dstFilePath) {
     'use strict';
     var luaString = toLua(obj);
     if (dstFilePath) {
-        writeText(dstFilePath, luaString);
+        writeText(dstFilePath,"return " + luaString);
     }
     return luaString;
 }
@@ -80,14 +80,14 @@ function fromString(str, dstFilePath) {
     'use strict';
     var obj = loadJsonString(str),
         luaString = fromObject(obj, dstFilePath);
-    return "return "+luaString;
+    return luaString;
 }
 
 function fromFile(srcFilePath, dstFilePath) {
     'use strict';
     var obj = loadJson(srcFilePath),
         luaString = fromObject(obj, dstFilePath);
-    return "return "+luaString;
+    return luaString;
 }
 
 module.exports = {
