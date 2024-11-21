@@ -34,7 +34,7 @@ function toLua(obj) {
             result += '["' + k + '"] = ' + toLua(v);
         }
         if (i < len - 1) {
-            if(result.charAt(result.length - 1)=='}'{
+            if(result.charAt(result.length - 1)=='}'){
                 result += ",\n";
             }else{
                 result += ",";
