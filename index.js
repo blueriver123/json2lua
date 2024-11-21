@@ -34,11 +34,11 @@ function toLua(obj) {
             result += '["' + k + '"] = ' + toLua(v);
         }
         if (i < len - 1) {
-            result += ",";
+            result += ",\n";
         }
         i += 1;
     });
-    result += "}\n";
+    result += "}";
     return result;
 }
 
