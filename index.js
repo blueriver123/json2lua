@@ -19,7 +19,7 @@ function toLua(obj) {
     }
     if (!lodash.isObject(obj)) {
         if (typeof obj === 'string') {
-            return '"' + obj + '"';
+            return '"' + obj.replaceAll('"','\\"') + '"';
         }
         return obj.toString();
     }
