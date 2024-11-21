@@ -38,7 +38,7 @@ function toLua(obj) {
         }
         i += 1;
     });
-    result += "}";
+    result += "}\n";
     return result;
 }
 
