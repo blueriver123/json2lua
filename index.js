@@ -19,6 +19,7 @@ function toLua(obj) {
     }
     if (!lodash.isObject(obj)) {
         if (typeof obj === 'string') {
+            obj = obj.replaceAll('\n','\\n');
             return '"' + obj.replaceAll('"','\\"') + '"';
         }
         return obj.toString();
